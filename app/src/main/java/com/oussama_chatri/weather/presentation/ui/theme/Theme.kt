@@ -5,12 +5,21 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
+import com.oussama_chatri.weather.MainApp
 
-val LocalPaddingSizes = staticCompositionLocalOf { PaddingSizes() }
+val context = MainApp.applicationContext()
 
-val LocalCornerSizes = staticCompositionLocalOf { CornerSizes() }
+val LocalPaddingSizes = staticCompositionLocalOf { getPaddingSizes(screenSizeCase = getScreenDpi(context)) }
 
-val LocalIconSizes = staticCompositionLocalOf { IconSizes() }
+val LocalCornerSizes = staticCompositionLocalOf { getCornerSizes(screenSizeCase = getScreenDpi(context)) }
+
+val LocalIconSizes = staticCompositionLocalOf { getIconSizes(screenSizeCase = getScreenDpi(context)) }
+
+data class DesignMetrics(
+    val paddingSizes: PaddingSizes,
+    val cornerSizes: CornerSizes,
+    val iconSizes: IconSizes
+)
 
 val MaterialTheme.localPaddingSizes: PaddingSizes
     @Composable
@@ -54,14 +63,17 @@ fun WeatherTheme(
         else -> LightColorScheme
     }
 
-    val paddingSizes = PaddingSizes()
-    val cornerSizes = CornerSizes()
-    val iconSizes = IconSizes()
+    val screenSizeCase = getScreenSizeCase()
+    val typography = getTypographyByScreenSize(screenSizeCase)
+
+    val paddingSizes = getPaddingSizes(screenSizeCase = screenSizeCase)
+    val cornerSizes = getCornerSizes(screenSizeCase = screenSizeCase)
+    val iconSizes = getIconSizes(screenSizeCase = screenSizeCase)
 
     CompositionLocalProvider(
-        LocalPaddingSizes provides remember { PaddingSizes() },
-        LocalCornerSizes provides remember { CornerSizes() },
-        LocalIconSizes provides remember { IconSizes() }
+        LocalPaddingSizes provides remember { paddingSizes },
+        LocalCornerSizes provides remember { cornerSizes },
+        LocalIconSizes provides remember { iconSizes }
     ){
         MaterialTheme(
             colorScheme = colorScheme,

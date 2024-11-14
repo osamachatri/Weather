@@ -1,6 +1,7 @@
 package com.oussama_chatri.weather
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import androidx.work.Configuration
 import com.oussama_chatri.weather.data.offline.repositories.WeatherRepository
@@ -23,4 +24,17 @@ class MainApp : Application(), Configuration.Provider {
             .setMinimumLoggingLevel(Log.DEBUG)
             .setWorkerFactory(workFactoryFactory.create(weatherRepository))
             .build()
+
+    override fun onCreate() {
+        super.onCreate()
+        instance = this
+    }
+
+    companion object {
+        private lateinit var instance: MainApp
+
+        fun applicationContext(): Context {
+            return instance.applicationContext
+        }
+    }
 }
