@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">Weather</string>
+    <!--    Keys-->
+    <string name="weatherApi">28dcfb3f1b4b408aa61105523242109</string>
+    <string name="cityApi">e1f7e5104emshecdedc5d7d53a77p1cff73jsna3a2a0fd4fe4</string>
+
+    <!--    ButtonsTexts-->
+    <string name="cancel">Cancel</string>
+    <string name="search_for_a_city">Search for a city</string>
+
+    <!--    Famous cities-->
+    <string name="international_cities">International famous cities :</string>
+    <array name="international_famous_cities">
+        <item>New York</item>
+        <item>London</item>
+        <item>Paris</item>
+        <item>Tokyo</item>
+        <item>Dubai</item>
+        <item>Sydney</item>
+        <item>Toronto</item>
+        <item>Rome</item>
+        <item>Beijing</item>
+    </array>
+    <string name="Algeria_famous_cities">Famous Algerian cities :</string>
+    <array name="local_famous_cities">
+        <item>Algiers</item>
+        <item>Bejaia</item>
+        <item>Oran</item>
+        <item>Batna</item>
+        <item>Ouargla</item>
+        <item>Annaba</item>
+    </array>
+
+
 </resources>

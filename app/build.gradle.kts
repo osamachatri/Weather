@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.hilt.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -91,6 +92,7 @@ dependencies {
 
     //Work manager
     implementation("androidx.work:work-runtime-ktx:2.9.1")
+    implementation ("androidx.hilt:hilt-work:1.2.0")
 
     //Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")

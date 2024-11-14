@@ -1,4 +1,4 @@
-package com.oussama_chatri.weather.ui.theme
+package com.oussama_chatri.weather.presentation.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
