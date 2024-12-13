@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.oussama_chatri.weather.presentation.ui.graph.MainGraph
 import com.oussama_chatri.weather.presentation.ui.theme.WeatherTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             WeatherTheme {
-
+                MainGraph()
             }
         }
     }

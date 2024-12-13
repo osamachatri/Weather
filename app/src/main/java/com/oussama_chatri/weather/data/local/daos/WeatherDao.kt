@@ -18,8 +18,8 @@ interface WeatherDao {
     @Query("SELECT * FROM weather_data")
     suspend fun getAllWeatherData(): List<WeatherData>
 
-    @Query("SELECT * FROM weather_data where name = :cityName")
-    suspend fun getTheWeatherOfCity(cityName: String): WeatherData
+    @Query("SELECT * FROM weather_data where id = :id")
+    suspend fun getDataOfCityById(id: Int): WeatherData
 
     @Query("DELETE FROM weather_data")
     suspend fun deleteAllWeatherData()

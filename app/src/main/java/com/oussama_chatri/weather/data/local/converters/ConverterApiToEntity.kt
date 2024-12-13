@@ -1,4 +1,4 @@
-package com.oussama_chatri.weather.data.converters
+package com.oussama_chatri.weather.data.local.converters
 
 import com.oussama_chatri.weather.data.local.entities.Astro
 import com.oussama_chatri.weather.data.local.entities.Condition
