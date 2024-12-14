@@ -42,5 +42,11 @@ public class TimeUtils {
         dateFormat.setTimeZone(calendar.getTimeZone());
         return dateFormat.format(calendar.getTime());
     }
+
+    public static String getDayOfWeekFromTimestamp(long timestamp) {
+        Date date = new Date(timestamp * 1000);
+        SimpleDateFormat dayFormat = new SimpleDateFormat("EEEE", Locale.getDefault());
+        return dayFormat.format(date);
+    }
 }
 

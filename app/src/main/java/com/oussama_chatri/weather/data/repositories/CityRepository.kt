@@ -8,9 +8,11 @@ class CityRepository(private val cityDao: CityDao, private val cityApiService: C
     CityDao {
     override suspend fun upsert(city: City) = cityDao.upsert(city)
 
-    override suspend fun delete(city: City) = cityDao.delete(city)
+    override suspend fun deleteCityById(id: Int) = cityDao.deleteCityById(id)
 
     override suspend fun getAllCities(): List<City> = cityDao.getAllCities()
+
+    override suspend fun getCityById(id: Int) = cityDao.getCityById(id)
 
     suspend fun searchForCities(
         namePrefix: String,
