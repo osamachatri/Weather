@@ -18,6 +18,6 @@ interface CityDao{
     suspend fun getAllCities() : List<City>
 
     @Query("select * from cities where id = :id")
-    suspend fun getCityById(id : Int)
+    suspend fun getCityById(id : Int) : City
 
 }

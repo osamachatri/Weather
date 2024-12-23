@@ -42,7 +42,9 @@ fun Current.toDomainModel(): com.oussama_chatri.weather.domain.models.Current {
         pressure_mb = this.pressure_mb,
         pressure_in = this.pressure_in,
         humidity = this.humidity,
-        uv = this.uv
+        uv = this.uv,
+        dewpoint_c = this.dewpoint_c,
+        dewpoint_f = this.dewpoint_f
     )
 }
 
@@ -55,16 +57,16 @@ fun Condition.toDomainModel(): com.oussama_chatri.weather.domain.models.Conditio
 
 fun Forecast.toDomainModel(): com.oussama_chatri.weather.domain.models.Forecast {
     return com.oussama_chatri.weather.domain.models.Forecast(
-        forecastday = this.forecastday.map { it.toDomainModel() }
+        forecastday = this.forecastday!!.map { it.toDomainModel() }
     )
 }
 
 fun ForecastDay.toDomainModel(): com.oussama_chatri.weather.domain.models.ForecastDay {
     return com.oussama_chatri.weather.domain.models.ForecastDay(
         date_epoch = this.date_epoch,
-        day = this.day.toDomainModel(),
-        astronomy = this.astro.toDomainModel(),
-        hour = this.hour.map { it.toDomainModel() }
+        day = this.day!!.toDomainModel(),
+        astronomy = this.astro!!.toDomainModel(),
+        hour = this.hour!!.map { it.toDomainModel() }
     )
 }
 

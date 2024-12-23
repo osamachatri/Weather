@@ -2,9 +2,9 @@ package com.oussama_chatri.weather.domain.models
 
 data class Weather(
     val id : Int,
-    val location: Location,
-    val current: Current,
-    val forecast: Forecast
+    val location: Location?,
+    val current: Current?,
+    val forecast: Forecast?
 )
 
 data class Location(
@@ -24,6 +24,8 @@ data class Current(
     val pressure_mb: Double,
     val pressure_in: Double,
     val humidity: Int,
+    val dewpoint_c : Double,
+    val dewpoint_f : Double,
     val uv: Double
 )
 

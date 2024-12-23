@@ -1,4 +1,4 @@
-package com.oussama_chatri.weather.data.local.converters
+package com.oussama_chatri.weather.data.mappers
 
 import com.oussama_chatri.weather.data.local.entities.Astro
 import com.oussama_chatri.weather.data.local.entities.Condition
@@ -10,7 +10,7 @@ import com.oussama_chatri.weather.data.local.entities.Hour
 import com.oussama_chatri.weather.data.local.entities.Location
 import com.oussama_chatri.weather.data.local.entities.WeatherData
 
-fun apiToEntityWeatherData(apiWeatherData: com.oussama_chatri.weather.data.remote.responses.WeatherData): WeatherData {
+fun weatherApiToEntity(apiWeatherData: com.oussama_chatri.weather.data.remote.responses.WeatherData): WeatherData {
     return WeatherData(
         location = apiToEntityLocation(apiWeatherData.location),
         current = apiToEntityCurrent(apiWeatherData.current),
