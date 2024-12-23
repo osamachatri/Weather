@@ -1,6 +1,5 @@
 package com.oussama_chatri.weather.data.repositories
 
-<<<<<<< HEAD
 import com.oussama_chatri.weather.data.local.daos.CityDao
 import com.oussama_chatri.weather.data.mappers.cityApiToEntity
 import com.oussama_chatri.weather.data.mappers.toDomain
@@ -10,7 +9,7 @@ import com.oussama_chatri.weather.data.remote.responses.CityResponse
 import com.oussama_chatri.weather.domain.repositories.CityRepository
 import retrofit2.Response
 
-class CityRepository(private val cityDao: CityDao, private val cityApiService: CityApiService) :
+class CityRepositoryImp(private val cityDao: CityDao, private val cityApiService: CityApiService) :
  CityRepository{
     override suspend fun upsert(city: City) = cityDao.upsert(cityApiToEntity(city))
 
@@ -28,5 +27,3 @@ class CityRepository(private val cityDao: CityDao, private val cityApiService: C
         cityApiService.searchCities(namePrefix = namePrefix)
 
 }
-=======
->>>>>>> a5183898d1d309c61d5cd5a62b17cec2c938b9cd
